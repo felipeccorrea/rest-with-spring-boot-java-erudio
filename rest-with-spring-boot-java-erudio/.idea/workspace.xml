@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bbaff75-4d2c-48a6-a223-b99321b2337a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/remote-targets.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/erudio/controllers/GreetingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/erudio/model/Greeting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/erudio/controllers/MathController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/erudio/exception/ExceptionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/erudio/exception/UnsupportedMathOperationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/erudio/exception/handler/CustomEntityResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -32,63 +28,67 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000296026248392" />
-      <entry key="MS500" value="1.277943980477753" />
-      <entry key="S2" value="4.257118264119259" />
-      <entry key="S5" value="8.57682547927779" />
-      <entry key="S10" value="12.621519113285048" />
-      <entry key="S30" value="19.60056856362673" />
-      <entry key="S60" value="23.989364960020485" />
-      <entry key="M2" value="29.30974457509754" />
-      <entry key="M5" value="37.56258567093531" />
-      <entry key="M10" value="43.477599623461785" />
-      <entry key="M15" value="46.67665899190041" />
-      <entry key="M30" value="51.48471705192607" />
-      <entry key="H1" value="55.04814767965131" />
-      <entry key="H2" value="57.30654815582358" />
-      <entry key="H4" value="58.591999179064935" />
-      <entry key="D1" value="59.7561570604631" />
-      <entry key="W1" value="59.96493128453766" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0006228150737941" />
+      <entry key="S5" value="1.379732394843606" />
+      <entry key="S10" value="5.775467300195778" />
+      <entry key="S30" value="39.81099269262551" />
+      <entry key="S60" value="73.33317606133119" />
+      <entry key="M2" value="102.15983769791002" />
+      <entry key="M5" value="139.03703374696934" />
+      <entry key="M10" value="179.78710117767466" />
+      <entry key="M15" value="205.84543756805027" />
+      <entry key="M30" value="244.93840043099146" />
+      <entry key="H1" value="273.5994261582946" />
+      <entry key="H2" value="305.20630871686495" />
+      <entry key="H4" value="354.55444269332594" />
+      <entry key="D1" value="464.88607166888346" />
+      <entry key="W1" value="497.0810669708739" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="4.020527309906457E-92" />
-      <entry key="MS500" value="5.258436130373033E-19" />
-      <entry key="S2" value="2.692862334316286E-5" />
-      <entry key="S5" value="0.014867423301512386" />
-      <entry key="S10" value="0.12417720180582988" />
-      <entry key="S30" value="0.6302437156990115" />
-      <entry key="S60" value="1.1757269905918277" />
-      <entry key="M2" value="2.2241389067982467" />
-      <entry key="M5" value="4.790413655219666" />
-      <entry key="M10" value="7.181244884997848" />
-      <entry key="M15" value="8.571210951633487" />
-      <entry key="M30" value="10.636579236950986" />
-      <entry key="H1" value="12.094937318664488" />
-      <entry key="H2" value="12.980980305104408" />
-      <entry key="H4" value="13.472279799987051" />
-      <entry key="D1" value="13.909368442024489" />
-      <entry key="W1" value="13.98698499948097" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="3.9388727301082866E-156" />
+      <entry key="S5" value="6.888882533165727E-63" />
+      <entry key="S10" value="8.299940150304446E-32" />
+      <entry key="S30" value="4.4140927905963066E-11" />
+      <entry key="S60" value="7.783571101959504E-6" />
+      <entry key="M2" value="0.005539444755398161" />
+      <entry key="M5" value="0.5338904858465892" />
+      <entry key="M10" value="2.8837412415421637" />
+      <entry key="M15" value="5.234283881932647" />
+      <entry key="M30" value="9.777264186145102" />
+      <entry key="H1" value="13.91588252071795" />
+      <entry key="H2" value="19.885926692923835" />
+      <entry key="H4" value="30.121069514245658" />
+      <entry key="D1" value="53.10564108606193" />
+      <entry key="W1" value="59.77554094834557" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8827291365499853" />
-      <entry key="MS500" value="1.2468347207000319" />
-      <entry key="S2" value="4.231217034950351" />
-      <entry key="S5" value="8.564922323573018" />
-      <entry key="S10" value="12.69892585381091" />
-      <entry key="S30" value="20.142563087964405" />
-      <entry key="S60" value="25.057643062605106" />
-      <entry key="M2" value="31.409656089661063" />
-      <entry key="M5" value="42.24582214352018" />
-      <entry key="M10" value="50.582788459863636" />
-      <entry key="M15" value="55.188954521987945" />
-      <entry key="M30" value="62.08574725132504" />
-      <entry key="H1" value="67.1231169026721" />
-      <entry key="H2" value="70.27686587961345" />
-      <entry key="H4" value="72.05875746906814" />
-      <entry key="D1" value="73.66457683408844" />
-      <entry key="W1" value="73.951780036111" />
+      <entry key="MS100" value="0.9138314502294005" />
+      <entry key="MS500" value="0.9821395952633915" />
+      <entry key="S2" value="0.9961232252009344" />
+      <entry key="S5" value="1.37695273438189" />
+      <entry key="S10" value="5.768529993204815" />
+      <entry key="S30" value="39.79403236155961" />
+      <entry key="S60" value="73.31735859878677" />
+      <entry key="M2" value="102.15384779059981" />
+      <entry key="M5" value="139.5503817910468" />
+      <entry key="M10" value="182.62932435013218" />
+      <entry key="M15" value="211.03134023409942" />
+      <entry key="M30" value="254.67127912166748" />
+      <entry key="H1" value="287.48419319249456" />
+      <entry key="H2" value="325.0717269880639" />
+      <entry key="H4" value="384.66167499702505" />
+      <entry key="D1" value="517.9881241347742" />
+      <entry key="W1" value="556.8560424910075" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -111,6 +111,7 @@
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Maven.rest-with-spring-boot-java-erudio [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.rest-with-spring-boot-java-erudio [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
@@ -118,13 +119,20 @@
     &quot;Spring Boot.Startup.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/AVELL/Desktop/FELIPE/projetos-intelij/rest-with-spring-boot-java-erudio/rest-with-spring-boot-java-erudio&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;
   }
 }</component>
   <component name="SharedIndexes">
