@@ -8,6 +8,12 @@ import java.util.function.DoubleBinaryOperator;
 @Service
 public class MathService {
 
+    private final NumberConverter numberConverter;
+
+    public MathService(NumberConverter numberConverter) {
+        this.numberConverter = numberConverter;
+    }
+
     public Double sum(String numberOne, String numberTwo) {
         return calculate(numberOne, numberTwo, (a, b) -> a + b);
     }
@@ -30,7 +36,7 @@ public class MathService {
     }
 
     public Double squareRoot(String number) {
-        double value = parseNumber(number);
+        double value = numberConverter.convert(number);
         if (value < 0) {
             throw new UnsupportedMathOperationException("Square root of a negative number is not supported");
         }
@@ -38,21 +44,6 @@ public class MathService {
     }
 
     private Double calculate(String numberOne, String numberTwo, DoubleBinaryOperator operation) {
-        return operation.applyAsDouble(parseNumber(numberOne), parseNumber(numberTwo));
-    }
-
-    private Double parseNumber(String value) {
-        if (!isNumeric(value)) {
-            throw new UnsupportedMathOperationException("Please enter a numeric value");
-        }
-        return Double.parseDouble(value.replace(",", "."));
-    }
-
-    private boolean isNumeric(String value) {
-        if (value == null) {
-            return false;
-        }
-        String number = value.replace(",", ".");
-        return number.matches("[-+]?[0-9]*\\.?[0-9]+");
+        return operation.applyAsDouble(numberConverter.convert(numberOne), numberConverter.convert(numberTwo));
     }
 }
